@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
-
+using Serilog;
 namespace Console_Notes
 {
     class Program
@@ -14,10 +9,11 @@ namespace Console_Notes
             // Note: The main program is so much more legible
 
             // Prompts the user to either read, write or exit the softw
-            
+
+       
             while (true)
             {
-                Console.WriteLine("Please enter 1 to read old notes and 2 to write a note, press 3 to exit: ");
+                Console.Write("\tPlease enter 1 to read old notes and 2 to write a note, press 3 to exit: ");
                 var choice = 0;
                 var note = new Note();
                 choice = Convert.ToInt32(Console.ReadLine());
@@ -27,6 +23,7 @@ namespace Console_Notes
                     case 1:
                        
                         SQLDatabaseHelper.Read();
+                        
                         break;
                     case 2:
                         note.WriteNote();

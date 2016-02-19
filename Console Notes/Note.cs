@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SQLite;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Console_Notes
 {
     public class Note
     {
-       
-        private string title;
+      
+        private string title { get; set;}
         private string post { get; set; }
 
         //Empty contructor
@@ -33,9 +25,9 @@ namespace Console_Notes
         // Prompts the user to input data, then calls saveNote Method
         public void WriteNote()
         {
-            Console.WriteLine("Enter Note Title: ");
+            Console.Write("Enter Note Title: ");
             title = Console.ReadLine();
-            Console.WriteLine("Enter Note: ");
+            Console.Write("Enter Note: ");
             post = Console.ReadLine();
          
             SaveNote();
